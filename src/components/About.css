@@ -1,0 +1,20 @@
+.about { padding: clamp(6rem, 10vw, 9rem) 2rem; background: var(--paper); }
+.about-container { max-width: 1280px; margin: auto; }
+.about-header { max-width: 760px; margin: 0 auto clamp(4rem, 7vw, 6rem); text-align: center; }
+.about-content { display: grid; grid-template-columns: minmax(360px, .88fr) 1.12fr; gap: clamp(3rem, 7vw, 7rem); align-items: center; }
+.about-image { position: relative; height: 700px; overflow: hidden; box-shadow: var(--shadow); }
+.about-image::before { content: ''; position: absolute; z-index: 1; inset: 18px; border: 1px solid rgba(255,255,255,.35); pointer-events: none; }
+.about-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.image-overlay { position: absolute; z-index: 2; inset: auto 0 0; padding: 5rem 2.5rem 2rem; color: white; background: linear-gradient(transparent, rgba(7,23,34,.9)); }
+.overlay-content h3 { color: var(--bronze-light); font-family: var(--serif); font-size: 2.2rem; font-weight: 400; }
+.overlay-content p { margin-top: .2rem; color: rgba(255,255,255,.72); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+.about-text > h3 { max-width: 640px; margin: .75rem 0 1.6rem; color: var(--ink); font-family: var(--serif); font-size: clamp(2.1rem, 4vw, 3.65rem); font-weight: 400; letter-spacing: -.03em; line-height: 1.08; }
+.about-text > p:not(.about-kicker) { max-width: 700px; margin-bottom: 1.2rem; color: var(--muted); font-size: 1.03rem; line-height: 1.8; }
+.about-features { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 2.5rem; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.feature { min-height: 166px; display: flex; gap: 1.15rem; padding: 1.7rem 1.4rem; background: transparent; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.feature-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; color: var(--bronze); border: 1px solid rgba(173,135,80,.35); }
+.feature-icon svg { width: 21px; height: 21px; }
+.feature h4 { color: var(--ink); font-family: var(--serif); font-size: 1.1rem; font-weight: 400; margin-bottom: .55rem; }
+.feature p { color: var(--muted); font-size: .83rem; line-height: 1.6; }
+@media (max-width: 1000px) { .about-content { grid-template-columns: 1fr; }.about-image { height: 560px; }.about-text { max-width: 800px; } }
+@media (max-width: 650px) { .about { padding-inline: 1.25rem; }.about-image { height: 440px; }.about-features { grid-template-columns: 1fr; }.feature { min-height: auto; }.image-overlay { padding: 4rem 1.5rem 1.5rem; } }
